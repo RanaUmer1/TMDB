@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <androidx.media3.ui.PlayerControlView
+        android:id="@+id/custom_controller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <!-- Default Media3 Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Rewind -->
+            <ImageButton
+                android:id="@+id/exo_rew"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Rewind"
+                android:src="@drawable/ic_fast_rewind" />
+
+            <!-- Play/Pause -->
+            <ImageButton
+                android:id="@+id/exo_play_pause"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Play/Pause" />
+
+            <!-- Forward -->
+            <ImageButton
+                android:id="@+id/exo_ffwd"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Forward"
+                android:src="@drawable/ic_fast_forward" />
+
+            <!-- Fullscreen toggle -->
+            <ImageButton
+                android:id="@+id/exo_fullscreen"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Fullscreen"
+                android:src="@drawable/ic_fullscreen" />
+        </LinearLayout>
+
+    </androidx.media3.ui.PlayerControlView>
+</layout>

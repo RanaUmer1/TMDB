@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TMDB</string>
+    <string name="search">Search...</string>
+
+    <string name="select_language" translatable="false">Select Language</string>
+    <string name="arabic" translatable="false">العربية</string>
+    <string name="english" translatable="false">English</string>
+</resources>

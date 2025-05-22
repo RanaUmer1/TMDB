@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <color name="background">#FFF8F6</color>
+        <color name="cardBackground">#FFFFFF</color>
+        <color name="textPrimary">#231917</color>
+        <color name="textSecondary">#53433F</color>
+        <color name="tint">#8F4C38</color>
+        <color name="searchBackground">#F5DED8</color>
+        <color name="black_30">#51000000</color>
+
+</resources>

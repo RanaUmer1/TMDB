@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="background">#121212</color>
+    <color name="cardBackground">#1E1E1E</color>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textSecondary">#B0B0B0</color>
+    <color name="searchBackground">#2C2C2C</color>
+
+    <!--    <color name="tint">#D7A08A</color> &lt;!&ndash; Softer & brighter brown for dark bg &ndash;&gt;-->
+    <color name="tint">#FF5252</color> <!-- Light green: soft yet visible on dark bg -->
+
+</resources>
