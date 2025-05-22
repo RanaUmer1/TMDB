@@ -16,6 +16,12 @@ import com.professor.starzplay.databinding.ActivityDetailsBinding
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
     private var mediaItem: MediaItem? = null
+    val gotoNext = View.OnClickListener {
+        val intent = Intent(this@DetailsActivity, PlayerActivity::class.java)
+        intent.putExtra(Constants.MEDIA_ITEM, mediaItem)
+        startActivity(intent)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -91,11 +97,9 @@ class DetailsActivity : AppCompatActivity() {
                 View.GONE
             }
 
-        playbackButton.setOnClickListener {
-            val intent = Intent(this@DetailsActivity, PlayerActivity::class.java)
-            intent.putExtra(Constants.MEDIA_ITEM, mediaItem)
-            startActivity(intent)
-        }
+        playbackButton.setOnClickListener(gotoNext)
+        itemImageView.setOnClickListener(gotoNext)
     }
+
 
 }

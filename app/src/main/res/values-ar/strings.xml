@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name">TMDB</string>
     <string name="search">بحث...</string>
+    <string name="play">يلعب</string>
 </resources>
