@@ -33,7 +33,7 @@ class MainViewModel @Inject constructor(
         loadDefaultContent()
     }
 
-    private fun loadDefaultContent() {
+     fun loadDefaultContent() {
         viewModelScope.launch {
             _mediaState.value = UiState.Loading
             try {

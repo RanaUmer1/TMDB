@@ -32,7 +32,7 @@ class DetailsActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val mediaItem = intent.getParcelableExtra<MediaItem>(Constants.MEDIA_ITEM)
+        mediaItem = intent.getParcelableExtra(Constants.MEDIA_ITEM)
         mediaItem?.let { binding.bindMediaItem(it) }
 
     }

@@ -11,4 +11,5 @@
     <string name="retry">Retry</string>
     <string name="no_internet_connection">No internet connection !</string>
     <string name="do_you_want_to_open_network_settings">Do you want to open network settings?</string>
+    <string name="something_went_wrong">Something went wrong</string>
 </resources>

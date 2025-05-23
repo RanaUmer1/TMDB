@@ -48,7 +48,7 @@ class PlayerActivity : ComponentActivity() {
     private fun setupViews() {
         mediaItem?.let {
             Glide.with(binding.ivContent.context)
-                .load("https://image.tmdb.org/t/p/w500${it.poster_path}").into(binding.ivContent)
+                .load("https://image.tmdb.org/t/p/w500${it.backdrop_path}").into(binding.ivContent)
         }
 
         binding.playButton.setOnClickListener {

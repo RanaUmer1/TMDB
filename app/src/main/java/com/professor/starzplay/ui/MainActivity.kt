@@ -18,7 +18,6 @@ import com.professor.data_source.model.MediaItem
 import com.professor.starzplay.R
 import com.professor.starzplay.databinding.ActivityMainBinding
 import com.professor.starzplay.adapter.CarouselAdapter
-import com.professor.starzplay.utils.NetworkChangeReceiver
 import com.professor.starzplay.utils.UiState
 import com.professor.starzplay.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
     private var carouselAdapter: CarouselAdapter? = null
-    private lateinit var networkChangeReceiver: NetworkChangeReceiver
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -55,19 +53,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
-    override fun onResume() {
-        super.onResume()
-        networkChangeReceiver = NetworkChangeReceiver(this)
-        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
-        registerReceiver(networkChangeReceiver, filter)
-    }
-
-    override fun onPause() {
-        super.onPause()
-        unregisterReceiver(networkChangeReceiver)
-    }
     private fun setupSearchListener() {
+
+        binding.llRetry.setOnClickListener {
+            viewModel.loadDefaultContent()
+        }
+
         binding.searchBox.setOnEditorActionListener { v, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_DONE) {
                 val query = v.text.toString().trim()
@@ -92,13 +83,14 @@ class MainActivity : AppCompatActivity() {
                 is UiState.Loading -> {
                     // Show progress
                     binding.carouselRecyclerView.isVisible = false
-
                     binding.progressBar.isVisible = true
+                    binding.llRetry.isVisible = false
                 }
 
                 is UiState.Success -> {
                     binding.progressBar.isVisible = false
                     binding.carouselRecyclerView.isVisible = true
+                    binding.llRetry.isVisible = false
                     carouselAdapter = CarouselAdapter(state.data) { selectedItem ->
                         openDetailScreen(selectedItem)
                     }
@@ -106,7 +98,9 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 is UiState.Error -> {
+
                     binding.progressBar.isVisible = false
+                    binding.llRetry.isVisible = true
                     Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                 }
             }

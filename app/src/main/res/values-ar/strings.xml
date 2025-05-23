@@ -3,4 +3,10 @@
     <string name="app_name">TMDB</string>
     <string name="search">بحث...</string>
     <string name="play">يلعب</string>
+    <string name="no">لا</string>
+    <string name="yes">نعم</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="no_internet_connection">لا يوجد اتصال بالإنترنت!</string>
+    <string name="do_you_want_to_open_network_settings">هل ترغب في فتح إعدادات الشبكة؟</string>
+    <string name="something_went_wrong">حدث خطأ ما</string>
 </resources>
